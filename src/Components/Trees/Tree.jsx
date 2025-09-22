@@ -1,10 +1,9 @@
 const Tree = ({ tree }) => {
   const { image, name, description, category, price } = tree;
-  console.log(tree);
 
   return (
     <div className="p-4 bg-white rounded-lg">
-      <div className="w-full h-[184px] bg-gray-400 rounded-lg mb-3">
+      <div className="w-full h-[184px] bg-slate-100 rounded-lg mb-3">
         <img
           className="w-full object-cover h-full rounded-lg"
           src={image}

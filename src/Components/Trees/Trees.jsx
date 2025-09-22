@@ -1,17 +1,26 @@
-import React, { use } from 'react';
+import React, { Suspense, use } from 'react';
 import Tree from './Tree';
+import TreeCatagories from '../TreeCatagory/TreeCatagories';
 
 const Trees = ({ plantsData }) => {
   let useTrees = use(plantsData);
 
   let allPlants = useTrees.plants;
 
+  let plantsCatagory = fetch(
+    'https://openapi.programming-hero.com/api/categories'
+  ).then(res => res.json());
+
   return (
     <div className="grid grid-cols-12 gap-[30px]">
-      <div className="col-span-2 bg-gray-200"></div>
+      <div className="col-span-2 ">
+        <Suspense fallback={<h3>Loading...</h3>}>
+          <TreeCatagories plantsCatagory={plantsCatagory}></TreeCatagories>
+        </Suspense>
+      </div>
       <div className="col-span-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {allPlants.map(tree => (
-          <Tree tree={tree}></Tree>
+          <Tree key={tree.id} tree={tree}></Tree>
         ))}
       </div>
       <div className="col-span-2 bg-gray-200"></div>
