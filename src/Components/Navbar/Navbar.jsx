@@ -6,7 +6,11 @@ const Navbar = () => {
       <div className="navbar container mx-auto">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn bg-white lg:hidden">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn bg-white lg:hidden mr-3"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -38,7 +42,7 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a className="text-2xl text-white cursor-pointer font-bold">
+          <a className="text-lg md:text-xl lg:text-2xl text-white cursor-pointer font-bold">
             Green Earth
           </a>
         </div>
