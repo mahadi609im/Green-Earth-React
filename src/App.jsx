@@ -1,9 +1,9 @@
+import Navbar from './Components/Navbar/Navbar';
+
 const App = () => {
   return (
     <div>
-      <h3 className="text-center font-semibold text-center text-green-500">
-        Bismillah
-      </h3>
+      <Navbar></Navbar>
     </div>
   );
 };
